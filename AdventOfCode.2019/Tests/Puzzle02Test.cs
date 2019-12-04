@@ -12,13 +12,14 @@ namespace AdventOfCode.Y2019.Tests
         public void Part1Test()
         {
             var answer = TestTimer(Puzzle, Puzzle.Part1);
-
+            Assert.Equal(3306701, answer);
         }
 
         [Fact]
         public void Part2Test()
         {
             var answer = TestTimer(Puzzle, Puzzle.Part2);
+            Assert.NotNull(answer);
         }
     }
 }
