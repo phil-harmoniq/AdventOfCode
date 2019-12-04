@@ -1,13 +1,15 @@
 ﻿using AdventOfCode.Y2019.Puzzles.Generic;
 using System;
 using System.Diagnostics;
+using System.IO;
 
 namespace AdventOfCode.Y2019.Tests.Generic
 {
     public abstract class PuzzleTest
     {
-        public T TestTimer<T>(Puzzle puzzle, Func<string[], T> part, string[] input)
+        public TOutput TestTimer<TOutput>(Puzzle puzzle, Func<string[], TOutput> part)
         {
+            var input = File.ReadAllLines(Path.Combine("Inputs", $"{puzzle.GetType().Name}.txt"));
             var timer = new Stopwatch();
             timer.Start();
             var answer = part(input);

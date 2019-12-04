@@ -4,21 +4,21 @@ using Xunit;
 
 namespace AdventOfCode2019.Tests
 {
-    public class Puzzle01Test : PuzzleTest
+    public class Puzzle01Tests : PuzzleTest
     {
         public readonly Puzzle01 Puzzle = new Puzzle01();
 
         [Fact]
-        public void Puzzle01Part1Test()
+        public void Part1Test()
         {
-            var fuel = TestTimer(Puzzle, Puzzle.Part1, Puzzle.Input);
+            var fuel = TestTimer(Puzzle, Puzzle.Part1);
             Assert.Equal(3538016, fuel);
         }
 
         [Fact]
-        public void Puzzle01Part2Test()
+        public void Part2Test()
         {
-            var fuel = TestTimer(Puzzle, Puzzle.Part2, Puzzle.Input);
+            var fuel = TestTimer(Puzzle, Puzzle.Part2);
             Assert.Equal(5304147, fuel);
         }
     }

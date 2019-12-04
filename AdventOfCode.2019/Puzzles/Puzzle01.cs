@@ -1,5 +1,4 @@
 using AdventOfCode.Y2019.Puzzles.Generic;
-using System;
 
 namespace AdventOfCode2019.Puzzles
 {
