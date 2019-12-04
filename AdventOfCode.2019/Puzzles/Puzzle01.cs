@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace AdventOfCode2018.Puzzles
+namespace AdventOfCode2019.Puzzles
 {
     public static class Puzzle01
     {

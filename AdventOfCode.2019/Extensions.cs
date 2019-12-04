@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AdventOfCode2018
+namespace AdventOfCode2019
 {
     public static class Extensions
     {
