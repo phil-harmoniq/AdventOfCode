@@ -1,7 +1,5 @@
 using AdventOfCode.Y2019.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace AdventOfCode2019
 {
