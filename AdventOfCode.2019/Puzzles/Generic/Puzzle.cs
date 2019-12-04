@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace AdventOfCode._2019.Puzzles.Generic
+namespace AdventOfCode.Y2019.Puzzles.Generic
 {
     public abstract class Puzzle
     {

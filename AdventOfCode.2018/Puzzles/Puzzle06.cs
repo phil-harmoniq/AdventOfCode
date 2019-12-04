@@ -2,9 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using static AdventOfCode2018.Extensions;
 
-namespace AdventOfCode2018.Puzzles
+namespace AdventOfCode.Y2018.Puzzles
 {
     public class Puzzle06
     {
@@ -14,7 +13,7 @@ namespace AdventOfCode2018.Puzzles
         {
             var givenCoordinates = Input.Select(line => Coordinates.Parse(line)).ToArray();
 
-            Enumerate2D(1000, 1000, (x, y) =>
+            Extensions.Enumerate2D(1000, 1000, (x, y) =>
             {
                 var distances = givenCoordinates.Select(c => new KeyValuePair<Coordinates, int>(c, c.DistanceTo(x, y)));
                 var sorted = distances.OrderBy(c => c.Value);
@@ -40,12 +39,12 @@ namespace AdventOfCode2018.Puzzles
             var givenCoordinates = Input.Select(line => Coordinates.Parse(line));
             var underOneThousand = 0;
 
-            Enumerate2D(1000, 1000, (x, y) =>
+            Extensions.Enumerate2D(1000, 1000, (x, y) =>
             {
                 var distancesTotal = givenCoordinates
                     .Select(d => new KeyValuePair<Coordinates, int>(d, d.DistanceTo(x, y)))
                     .Sum(d => d.Value);
-                
+
                 if (distancesTotal < 10000) { underOneThousand++; }
             });
 
@@ -60,7 +59,7 @@ namespace AdventOfCode2018.Puzzles
             internal List<int[]> OwnedCoordinates { get; private set; }
             internal bool IsOnEdge { get; set; }
             internal int Size => OwnedCoordinates.Count;
-            internal void AddOwnedCoordinates(int x, int y) => OwnedCoordinates.Add(new int[] {x, y});
+            internal void AddOwnedCoordinates(int x, int y) => OwnedCoordinates.Add(new int[] { x, y });
             internal int DistanceTo(int x, int y) => Math.Abs(X - x) + Math.Abs(Y - y);
             public override string ToString() => $"({X},{Y}) - {Id}";
 
@@ -74,7 +73,7 @@ namespace AdventOfCode2018.Puzzles
 
             internal static Coordinates Parse(string input)
             {
-                var stringSplit = input.Split(new string[] {", "}, StringSplitOptions.None);
+                var stringSplit = input.Split(new string[] { ", " }, StringSplitOptions.None);
                 return new Coordinates(int.Parse(stringSplit[0]), int.Parse(stringSplit[1]));
             }
         }

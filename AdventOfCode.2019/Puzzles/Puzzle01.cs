@@ -1,52 +1,47 @@
-using System.Collections.Generic;
-using System.IO;
+using AdventOfCode.Y2019.Puzzles.Generic;
+using System;
 
 namespace AdventOfCode2019.Puzzles
 {
-    public static class Puzzle01
+    public class Puzzle01 : Puzzle
     {
-        public static readonly string[] Input = File.ReadAllLines(Path.Combine("Inputs", "Input01.txt"));
-
-        public static int Part1()
+        public int Part1(string[] input)
         {
-            var answer = 0;
+            var fuel = 0;
 
-            foreach (var line in Input)
+            foreach (var massString in input)
             {
-                answer += int.Parse(line);
+                var mass = int.Parse(massString);
+                fuel += mass / 3 - 2;
             }
 
-            return answer;
+            return fuel;
         }
 
-        public static int Part2()
+        public int Part2(string[] input)
         {
-            var answer = 0;
-            var uniqueValues = new List<int> { answer };
+            var fuel = 0;
 
-            return DuplicateCheckLoop(Input, answer, uniqueValues);
-        }
-
-        private static int DuplicateCheckLoop(string[] input, int answer, List<int> uniqueValues)
-        {
-            var duplicateFound = false;
-
-            foreach (var line in input)
+            foreach (var massString in input)
             {
-                answer += int.Parse(line);
-                if (uniqueValues.Contains(answer))
-                {
-                    duplicateFound = true;
-                    break;
-                }
-                else
-                {
-                    uniqueValues.Add(answer);
-                }
+                var mass = int.Parse(massString);
+                fuel += RecursivelyCalculateFuel(mass);
             }
 
-            if (duplicateFound) { return answer; }
-            else { return DuplicateCheckLoop(input, answer, uniqueValues); }
+            return fuel;
+        }
+
+        private int RecursivelyCalculateFuel(int mass)
+        {
+            var fuelNeeded = mass / 3 - 2;
+
+            if (fuelNeeded < 0)
+            {
+                return 0;
+            }
+
+            fuelNeeded += RecursivelyCalculateFuel(fuelNeeded);
+            return fuelNeeded;
         }
     }
 }

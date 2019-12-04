@@ -1,11 +1,21 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>AdventOfCode._2018</RootNamespace>
+    <RootNamespace>AdventOfCode.Y2019</RootNamespace>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Inputs\Puzzle01.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Inputs\Puzzle01.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 
   <ItemGroup>
     <None Update="Inputs/**" CopyToOutputDirectory="PreserveNewest" />

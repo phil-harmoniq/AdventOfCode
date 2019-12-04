@@ -1,10 +1,9 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using static AdventOfCode2018.Extensions;
+using AdventOfCode.Y2018;
 
-namespace AdventOfCode2018.Puzzles
+namespace AdventOfCode.Y2018.Puzzles
 {
     public class Puzzle03
     {
@@ -31,7 +30,7 @@ namespace AdventOfCode2018.Puzzles
             var claims = Input.Select(line => Claim.ParseNew(line));
             var map = new int[1000, 1000];
             foreach (var claim in claims) { claim.AddToMap(map); }
-            
+
             foreach (var claim in claims)
             {
                 if (claim.HasNoOverlaps(map))
@@ -39,7 +38,7 @@ namespace AdventOfCode2018.Puzzles
                     return claim.Id;
                 }
             }
-            
+
             return -1;
         }
 
@@ -79,10 +78,10 @@ namespace AdventOfCode2018.Puzzles
             internal bool HasNoOverlaps(int[,] map)
             {
                 var hasOverlaps = true;
-                
-                Enumerate2D(OffsetX, OffsetY, OffsetX + LengthX, OffsetY + LengthY, (x, y) =>
+
+                Extensions.Enumerate2D(OffsetX, OffsetY, OffsetX + LengthX, OffsetY + LengthY, (x, y) =>
                 {
-                    if (map[x,y] != 1)
+                    if (map[x, y] != 1)
                     {
                         hasOverlaps = false;
                     }

@@ -1,9 +1,9 @@
 using System;
 using System.Diagnostics;
-using AdventOfCode2018.Puzzles;
+using AdventOfCode.Y2018.Puzzles;
 using Xunit;
 
-namespace AdventOfCode2018.Tests
+namespace AdventOfCode.Y2018
 {
     public class PuzzleTests
     {
