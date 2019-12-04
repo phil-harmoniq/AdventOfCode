@@ -17,7 +17,7 @@ namespace AdventOfCode.Y2018.Puzzles
             return new string(correctStepOrder.ToArray());
         }
 
-        #warning Puzzle 07 part 2 is not correct
+        [Obsolete("Puzzle 07 part 2 gives an incorrect answer")]
         public static int Part2()
         {
             var minutesElapsed = 0;

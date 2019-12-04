@@ -9,5 +9,10 @@ namespace AdventOfCode2019
         {
             return new IntCode(data[index], data[index + 1], data[index + 2], data[index + 3]);
         }
+
+        public static int DistanceToCenter(this Point point)
+        {
+            return Math.Abs(point.X) + Math.Abs(point.Y);
+        }
     }
 }

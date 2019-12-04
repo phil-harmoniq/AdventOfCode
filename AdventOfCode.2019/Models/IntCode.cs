@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace AdventOfCode.Y2019.Models
+﻿namespace AdventOfCode.Y2019.Models
 {
     public class IntCode
     {
@@ -20,21 +18,13 @@ namespace AdventOfCode.Y2019.Models
             Position2 = position2;
             Position3 = position3;
 
-            switch (position0)
+            OpCode = position0 switch
             {
-                case 1:
-                    OpCode = OpCode.Addition;
-                    break;
-                case 2:
-                    OpCode = OpCode.Multiplication;
-                    break;
-                case 99:
-                    OpCode = OpCode.Finished;
-                    break;
-                default:
-                    OpCode = OpCode.Invalid;
-                    break;
-            }
+                1 => OpCode.Addition,
+                2 => OpCode.Multiplication,
+                99 => OpCode.Finished,
+                _ => OpCode.Invalid,
+            };
         }
     }
 }

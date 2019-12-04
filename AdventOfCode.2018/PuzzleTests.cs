@@ -111,7 +111,6 @@ namespace AdventOfCode.Y2018
             Assert.Equal("EBICGKQOVMYZJAWRDPXFSUTNLH", answer);
         }
 
-        #warning Puzzle 07 part 2 gives an incorrect answer
         [Fact]
         public void Puzzle07Part2Test()
         {
