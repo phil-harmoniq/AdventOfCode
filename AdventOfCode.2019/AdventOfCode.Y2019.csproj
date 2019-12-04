@@ -9,10 +9,22 @@
 
   <ItemGroup>
     <None Remove="Inputs\Puzzle01.txt" />
+    <None Remove="Inputs\Puzzle02.txt" />
+    <None Remove="Inputs\Puzzle03.txt" />
+    <None Remove="Inputs\Puzzle04.txt" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="Inputs\Puzzle01.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Inputs\Puzzle02.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Inputs\Puzzle03.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Inputs\Puzzle04.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

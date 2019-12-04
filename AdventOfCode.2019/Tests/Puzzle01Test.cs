@@ -2,7 +2,7 @@ using AdventOfCode.Y2019.Tests.Generic;
 using AdventOfCode2019.Puzzles;
 using Xunit;
 
-namespace AdventOfCode2019.Tests
+namespace AdventOfCode.Y2019.Tests
 {
     public class Puzzle01Tests : PuzzleTest
     {

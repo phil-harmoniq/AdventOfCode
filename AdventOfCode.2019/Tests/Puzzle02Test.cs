@@ -20,6 +20,8 @@ namespace AdventOfCode.Y2019.Tests
         {
             var answer = TestTimer(Puzzle, Puzzle.Part2);
             Assert.NotNull(answer);
+            Assert.Equal(76, answer.Item1);
+            Assert.Equal(21, answer.Item2);
         }
     }
 }

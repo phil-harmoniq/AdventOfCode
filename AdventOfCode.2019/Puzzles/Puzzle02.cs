@@ -16,7 +16,7 @@ namespace AdventOfCode.Y2019.Puzzles
         {
             var data = input[0].Split(',').Select(x => int.Parse(x)).ToArray();
 
-            Part1ReplaceData(data);
+            ReplaceData(data, 12, 2);
             Calculate(data);
 
             return data[0];
@@ -31,7 +31,7 @@ namespace AdventOfCode.Y2019.Puzzles
                 for (var verb = _minReplace; verb <= _maxReplace; verb++)
                 {
                     var data = new List<int>(rawData).ToArray();
-                    Part2ReplaceData(data, noun, verb);
+                    ReplaceData(data, noun, verb);
                     Calculate(data);
 
                     if (data[0] == 19690720)
@@ -57,13 +57,7 @@ namespace AdventOfCode.Y2019.Puzzles
             }
         }
 
-        private void Part1ReplaceData(int[] data)
-        {
-            data[1] = 12;
-            data[2] = 2;
-        }
-
-        private void Part2ReplaceData(int[] data, int noun, int verb)
+        private void ReplaceData(int[] data, int noun, int verb)
         {
             data[1] = noun;
             data[2] = verb;
