@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace AdventOfCode.Y2019.Puzzles
 {
-    public class Puzzle02 : Puzzle
+    public class Puzzle02 : IPuzzle
     {
         private const int _minReplace = 0;
         private const int _maxReplace = 99;

@@ -4,11 +4,10 @@ using AdventOfCode2019;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace AdventOfCode.Y2019.Puzzles
 {
-    public class Puzzle03 : Puzzle
+    public class Puzzle03 : IPuzzle
     {
         public int Part1(string[] input)
         {

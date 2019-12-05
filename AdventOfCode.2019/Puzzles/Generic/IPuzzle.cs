@@ -2,7 +2,7 @@
 
 namespace AdventOfCode.Y2019.Puzzles.Generic
 {
-    public abstract class Puzzle
+    public interface IPuzzle
     {
     }
 }

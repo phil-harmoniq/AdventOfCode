@@ -2,7 +2,7 @@ using AdventOfCode.Y2019.Puzzles.Generic;
 
 namespace AdventOfCode2019.Puzzles
 {
-    public class Puzzle01 : Puzzle
+    public class Puzzle01 : IPuzzle
     {
         public int Part1(string[] input)
         {

@@ -7,7 +7,7 @@ namespace AdventOfCode.Y2019.Tests.Generic
 {
     public abstract class PuzzleTest
     {
-        public TOutput TestTimer<TOutput>(Puzzle puzzle, Func<string[], TOutput> part)
+        public TOutput TestTimer<TOutput>(IPuzzle puzzle, Func<string[], TOutput> part)
         {
             var input = File.ReadAllLines(Path.Combine("Inputs", $"{puzzle.GetType().Name}.txt"));
             var timer = new Stopwatch();
